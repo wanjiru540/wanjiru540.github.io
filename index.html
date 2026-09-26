@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lucy Wanjiru | Portfolio</title>
+    <title>Lucy Wanjiru | Web Developer & Virtual Assistant</title>
+
+    <meta name="description"
+          content="Lucy Wanjiru - Web Developer, Virtual Assistant and Content Creator based in Nairobi, Kenya.">
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -18,157 +21,404 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            color: #222;
-            background: #f8f9fc;
+            color: #1f2937;
+            background: #f8fafc;
         }
 
-        header {
+        /* NAVIGATION */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             background: #111827;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
             color: white;
-            text-align: center;
-            padding: 60px 20px;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
         }
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
         }
 
-        header p {
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
-
-        nav a {
+        .nav-links a {
             color: white;
             text-decoration: none;
-            margin: 0 8px;
             font-weight: bold;
+            font-size: 14px;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             text-decoration: underline;
         }
 
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 60px 20px;
-        }
-
-        h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
+        /* HERO */
+        .hero {
+            background: #111827;
+            color: white;
+            min-height: 620px;
+            display: flex;
+            align-items: center;
             text-align: center;
+            padding: 70px 20px;
         }
 
-        .intro {
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .profile-photo {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 23px;
+            font-weight: normal;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 17px;
+            color: #e5e7eb;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 7px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #111827;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.85;
+        }
+
+        /* SECTIONS */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+            color: #6b7280;
+        }
+
+        /* ABOUT */
+        .about-content {
+            max-width: 850px;
+            margin: auto;
             text-align: center;
             font-size: 18px;
         }
 
-        .skills,
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
+        .about-content p {
+            margin-bottom: 18px;
         }
 
-        .card {
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
             background: white;
             padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
-        .card h3 {
+        .skill-card h3 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .skill-card p {
+            color: #6b7280;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .service-card p {
+            color: #6b7280;
+        }
+
+        /* EXPERIENCE */
+        .experience-card {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .experience-card h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .experience-card .role {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .experience-card ul {
+            padding-left: 22px;
+        }
+
+        .experience-card li {
             margin-bottom: 10px;
         }
 
-        .project {
-            background: white;
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .project a {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card h3 {
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .project-card p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            margin-top: auto;
+            color: #111827;
             font-weight: bold;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTACT */
+        #contact {
+            background: #f1f5f9;
+            max-width: none;
+        }
+
+        .contact-inner {
+            max-width: 900px;
+            margin: auto;
         }
 
         form {
-            max-width: 650px;
+            max-width: 700px;
             margin: 30px auto;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
         label {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
             font-weight: bold;
         }
 
         input,
         textarea {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 18px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            padding: 13px;
+            margin-bottom: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 7px;
             font-size: 16px;
+            font-family: inherit;
         }
 
-        button {
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #111827;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .submit-btn {
             width: 100%;
-            padding: 13px;
-            border: none;
-            border-radius: 6px;
+            padding: 14px;
             background: #111827;
             color: white;
+            border: none;
+            border-radius: 7px;
             font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
         }
 
-        button:hover {
+        .submit-btn:hover {
             opacity: 0.85;
         }
 
-        .links {
+        /* CONTACT LINKS */
+        .contact-links {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
-        .links a {
-            margin: 0 10px;
+        .contact-links a {
+            display: inline-block;
+            margin: 8px 12px;
             font-weight: bold;
             text-decoration: none;
         }
 
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
         footer {
             background: #111827;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 32px;
+        footer p {
+            margin: 5px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
             }
 
-            nav a {
-                display: inline-block;
-                margin: 5px;
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .profile-photo {
+                width: 145px;
+                height: 145px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+            form {
+                padding: 25px 20px;
             }
         }
     </style>
@@ -176,207 +426,505 @@
 
 <body>
 
-<header>
-    <h1>Lucy Wanjiru</h1>
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            Lucy Wanjiru
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero" id="home">
+
+    <div class="hero-content">
+
+        <img
+            src="IMG-20260708-WA0010.jpg"
+            alt="Lucy Wanjiru"
+            class="profile-photo"
+        >
+
+        <h1>Lucy Wanjiru</h1>
+
+        <h2>
+            Web Developer | Virtual Assistant | Content Creator
+        </h2>
+
+        <p>
+            ICT professional passionate about building practical digital
+            solutions, supporting businesses with technology, and creating
+            useful and engaging online content.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                View My Work
+            </a>
+
+            <a
+                href="https://drive.google.com/file/d/1oZOkhcvWOZyjbBLLji66KRVovYIJJRPN/view?usp=drivesdk"
+                target="_blank"
+                class="btn btn-secondary"
+            >
+                View My CV
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <p class="section-subtitle">
+        ICT, web development, digital support and virtual assistance.
+    </p>
+
+    <div class="about-content">
+
+        <p>
+            I am an ICT professional passionate about technology,
+            web development, digital support and creating practical
+            digital solutions.
+        </p>
+
+        <p>
+            I enjoy building user-friendly websites and applications,
+            supporting digital tasks, managing online content and
+            learning new technologies.
+        </p>
+
+        <p>
+            I am open to opportunities where I can contribute my
+            technical and digital skills while continuing to learn
+            and grow professionally.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+    <h2 class="section-title">My Skills</h2>
+
+    <p class="section-subtitle">
+        Technical and digital skills I use in my work and projects.
+    </p>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3>Web Development</h3>
+            <p>
+                HTML, CSS, JavaScript, PHP and MySQL.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Virtual Assistance</h3>
+            <p>
+                Administrative support, online research,
+                data handling and digital task management.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Content Creation</h3>
+            <p>
+                Website content, copywriting and social media content.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Digital Support</h3>
+            <p>
+                Website management, troubleshooting and technical support.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Database Management</h3>
+            <p>
+                MySQL database creation, management and integration.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Mobile Development</h3>
+            <p>
+                Android development using Kotlin, XML and Android Studio.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Productivity Tools</h3>
+            <p>
+                Microsoft Excel, Google Workspace and digital
+                productivity tools.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Digital Marketing</h3>
+            <p>
+                Social media support, website content and online
+                presence management.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+
+    <h2 class="section-title">Services</h2>
+
+    <p class="section-subtitle">
+        Digital services I can provide to individuals, businesses
+        and organizations.
+    </p>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <h3>Website Design</h3>
+            <p>
+                Responsive and user-friendly websites for personal,
+                business and organizational needs.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Virtual Assistance</h3>
+            <p>
+                Administrative, research, data and online support tasks.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Content Writing</h3>
+            <p>
+                Clear and engaging website, business and social
+                media content.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Website Management</h3>
+            <p>
+                Website updates, content management and basic maintenance.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Social Media Support</h3>
+            <p>
+                Content assistance and digital support for social
+                media platforms.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Technical Support</h3>
+            <p>
+                Basic ICT support, troubleshooting and digital
+                technology assistance.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience">
+
+    <h2 class="section-title">Experience</h2>
+
+    <p class="section-subtitle">
+        Practical ICT and digital experience.
+    </p>
+
+    <div class="experience-card">
+
+        <h3>Mwea Software Company</h3>
+
+        <p class="role">
+            ICT Intern | September 2026 – Present
+        </p>
+
+        <ul>
+
+            <li>
+                Provide ICT and technical support to customers and staff.
+            </li>
+
+            <li>
+                Assist with website maintenance and updates.
+            </li>
+
+            <li>
+                Support hotspot and MikroTik-related services.
+            </li>
+
+            <li>
+                Assist with basic networking and troubleshooting tasks.
+            </li>
+
+            <li>
+                Attend to 50+ customers daily and assist with their
+                technical needs.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <h2 class="section-title">My Projects</h2>
+
+    <p class="section-subtitle">
+        Practical projects demonstrating my technical and digital skills.
+    </p>
+
+    <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+
+            <h3>School Management System</h3>
+
+            <p>
+                A PHP and MySQL-based system developed to help manage
+                student information and school records.
+            </p>
+
+            <a
+                href="https://github.com/wanjiru540/school-management-system"
+                target="_blank"
+                class="project-link"
+            >
+                View Project on GitHub →
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+
+            <h3>Android My Book Catalogue</h3>
+
+            <p>
+                An Android mobile application developed using Kotlin,
+                XML and Android Studio to organize and display
+                book information.
+            </p>
+
+            <a
+                href="https://github.com/wanjiru540"
+                target="_blank"
+                class="project-link"
+            >
+                View My GitHub →
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+
+            <h3>Web Design Projects</h3>
+
+            <p>
+                A collection of web development and design projects
+                created using different web technologies.
+            </p>
+
+            <a
+                href="https://github.com/wanjiru540"
+                target="_blank"
+                class="project-link"
+            >
+                Explore My GitHub →
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+
+            <h3>VA Portfolio</h3>
+
+            <p>
+                A portfolio project showcasing virtual assistance,
+                digital support and administrative skills.
+            </p>
+
+            <a
+                href="https://github.com/wanjiru540"
+                target="_blank"
+                class="project-link"
+            >
+                View My GitHub →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <div class="contact-inner">
+
+        <h2 class="section-title">Let's Work Together</h2>
+
+        <p class="section-subtitle">
+            Have a project, job opportunity, collaboration or question?
+            Send me a message.
+        </p>
+
+
+        <form
+            action="https://formspree.io/f/xoevkjrw"
+            method="POST"
+        >
+
+            <label for="name">
+                Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+            >
+
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+            >
+
+
+            <label for="subject">
+                Subject
+            </label>
+
+            <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What would you like to discuss?"
+                required
+            >
+
+
+            <label for="message">
+                Message
+            </label>
+
+            <textarea
+                id="message"
+                name="message"
+                rows="7"
+                placeholder="Write your message..."
+                required
+            ></textarea>
+
+
+            <button type="submit" class="submit-btn">
+                Send Message
+            </button>
+
+        </form>
+
+
+        <div class="contact-links">
+
+            <a href="mailto:lucy.koome12@gmail.com">
+                Email Me
+            </a>
+
+            <a
+                href="https://github.com/wanjiru540"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/wanjiru-lucy-46068a405"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 Lucy Wanjiru. All rights reserved.
+    </p>
 
     <p>
         Web Developer | Virtual Assistant | Content Creator
     </p>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section id="about">
-    <h2>About Me</h2>
-
-    <p class="intro">
-        I am an ICT professional passionate about web development,
-        digital support, virtual assistance and content creation.
-        I enjoy creating practical digital solutions and helping
-        individuals and businesses improve their online presence.
-    </p>
-</section>
-
-<section id="skills">
-    <h2>My Skills</h2>
-
-    <div class="skills">
-
-        <div class="card">
-            <h3>Web Development</h3>
-            <p>HTML, CSS, JavaScript, PHP and MySQL.</p>
-        </div>
-
-        <div class="card">
-            <h3>Virtual Assistance</h3>
-            <p>Administrative, research and digital support.</p>
-        </div>
-
-        <div class="card">
-            <h3>Content Creation</h3>
-            <p>Website content, copywriting and social media content.</p>
-        </div>
-
-        <div class="card">
-            <h3>Digital Support</h3>
-            <p>Website management, troubleshooting and technical support.</p>
-        </div>
-
-    </div>
-</section>
-
-<section id="services">
-    <h2>Services</h2>
-
-    <div class="services">
-
-        <div class="card">
-            <h3>Website Design</h3>
-            <p>Creating responsive and user-friendly websites.</p>
-        </div>
-
-        <div class="card">
-            <h3>Virtual Assistance</h3>
-            <p>Helping with administrative and online tasks.</p>
-        </div>
-
-        <div class="card">
-            <h3>Content Writing</h3>
-            <p>Writing clear and engaging digital content.</p>
-        </div>
-
-        <div class="card">
-            <h3>Website Management</h3>
-            <p>Updating, maintaining and managing website content.</p>
-        </div>
-
-        <div class="card">
-            <h3>Social Media Support</h3>
-            <p>Content planning and digital social media assistance.</p>
-        </div>
-
-    </div>
-</section>
-
-<section id="projects">
-    <h2>My Projects</h2>
-
-    <div class="project">
-        <h3>School Management System</h3>
-
-        <p>
-            A PHP and MySQL-based system developed to help manage
-            student information and school records.
-        </p>
-
-        <a href="https://github.com/wanjiru540/school-management-system"
-           target="_blank">
-            View Project on GitHub →
-        </a>
-    </div>
-
-    <div class="project">
-        <h3>Web Design Projects</h3>
-
-        <p>
-            A collection of web development and design projects
-            created using different web technologies.
-        </p>
-
-        <a href="https://github.com/wanjiru540"
-           target="_blank">
-            View My GitHub →
-        </a>
-    </div>
-
-    <div class="project">
-        <h3>VA Portfolio</h3>
-
-        <p>
-            My virtual assistance portfolio showcasing my digital
-            support and administrative skills.
-        </p>
-
-        <a href="https://github.com/wanjiru540"
-           target="_blank">
-            View My GitHub →
-        </a>
-    </div>
-
-</section>
-
-<section id="contact">
-    <h2>Contact Me</h2>
-
-    <p class="intro">
-        Have a project, job opportunity or collaboration?
-        Send me a message.
-    </p>
-
-    <form action="https://formspree.io/f/xoevkjrw" method="POST">
-
-        <label for="name">Name</label>
-
-        <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your name"
-            required
-        >
-
-        <label for="email">Email</label>
-
-        <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-        >
-
-        <label for="message">Message</label>
-
-        <textarea
-            id="message"
-            name="message"
-            rows="6"
-            placeholder="Write your message..."
-            required
-        ></textarea>
-
-        <button type="submit">
-            Send Message
-        </button>
-
-    </form>
-
-    <div class="links">
-
-        <a href="mailto:lucy.koome12@gmail.com">
-            Email Me
-        </a>
-
-        <a href="https://github.com/wanjiru540" target="_blank">
-            GitHub
-        </a>
-
-        <a href="https://www.linkedin.com/in/wanjiru-lucy-46068a405"
-           target="_blank">
-            LinkedIn
-        </a>
-
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Lucy Wanjiru. All rights reserved.</p>
 </footer>
 
 </body>
