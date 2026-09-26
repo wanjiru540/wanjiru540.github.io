@@ -3,58 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Lucy Wanjiru | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f8f9fc;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .skills,
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .project a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        form {
+            max-width: 650px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            background: #111827;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .links a {
+            margin: 0 10px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
     <h1>Lucy Wanjiru</h1>
-    <p>Web Developer | Virtual Assistant | Content Creator</p>
+
+    <p>
+        Web Developer | Virtual Assistant | Content Creator
+    </p>
 
     <nav>
-        <a href="#about">About</a> |
-        <a href="#skills">Skills</a> |
-        <a href="#projects">Projects</a> |
-        <a href="#services">Services</a> |
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<main>
-
 <section id="about">
     <h2>About Me</h2>
-    <p>
-        I am an ICT professional with experience in web development,
-        virtual assistance, digital support and content creation.
+
+    <p class="intro">
+        I am an ICT professional passionate about web development,
+        digital support, virtual assistance and content creation.
         I enjoy creating practical digital solutions and helping
-        businesses improve their online presence.
+        individuals and businesses improve their online presence.
     </p>
 </section>
 
 <section id="skills">
     <h2>My Skills</h2>
-    <ul>
-        <li>Web Development</li>
-        <li>Virtual Assistance</li>
-        <li>Content Writing</li>
-        <li>Website Management</li>
-        <li>Social Media Support</li>
-        <li>HTML, CSS & JavaScript</li>
-        <li>PHP & MySQL</li>
-        <li>Microsoft Office & Google Workspace</li>
-    </ul>
+
+    <div class="skills">
+
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript, PHP and MySQL.</p>
+        </div>
+
+        <div class="card">
+            <h3>Virtual Assistance</h3>
+            <p>Administrative, research and digital support.</p>
+        </div>
+
+        <div class="card">
+            <h3>Content Creation</h3>
+            <p>Website content, copywriting and social media content.</p>
+        </div>
+
+        <div class="card">
+            <h3>Digital Support</h3>
+            <p>Website management, troubleshooting and technical support.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="services">
+    <h2>Services</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>Website Design</h3>
+            <p>Creating responsive and user-friendly websites.</p>
+        </div>
+
+        <div class="card">
+            <h3>Virtual Assistance</h3>
+            <p>Helping with administrative and online tasks.</p>
+        </div>
+
+        <div class="card">
+            <h3>Content Writing</h3>
+            <p>Writing clear and engaging digital content.</p>
+        </div>
+
+        <div class="card">
+            <h3>Website Management</h3>
+            <p>Updating, maintaining and managing website content.</p>
+        </div>
+
+        <div class="card">
+            <h3>Social Media Support</h3>
+            <p>Content planning and digital social media assistance.</p>
+        </div>
+
+    </div>
 </section>
 
 <section id="projects">
     <h2>My Projects</h2>
 
-    <h3>School Management System</h3>
-    <p>PHP and MySQL system designed to help manage school information.</p>
-    <a href="https://github.com/wanjiru540/school-management-system">
-        View Project
-    </a>
+    <div class="project">
+        <h3>School Management System</h3>
 
-    <h3>Web Design</h3>
-    <p>Web design projects created using modern web technologies.</p
+        <p>
+            A PHP and MySQL-based system developed to help manage
+            student information and school records.
+        </p>
+
+        <a href="https://github.com/wanjiru540/school-management-system"
+           target="_blank">
+            View Project on GitHub →
+        </a>
+    </div>
+
+    <div class="project">
+        <h3>Web Design Projects</h3>
+
+        <p>
+            A collection of web development and design projects
+            created using different web technologies.
+        </p>
+
+        <a href="https://github.com/wanjiru540"
+           target="_blank">
+            View My GitHub →
+        </a>
+    </div>
+
+    <div class="project">
+        <h3>VA Portfolio</h3>
+
+        <p>
+            My virtual assistance portfolio showcasing my digital
+            support and administrative skills.
+        </p>
+
+        <a href="https://github.com/wanjiru540"
+           target="_blank">
+            View My GitHub →
+        </a>
+    </div>
+
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <p class="intro">
+        Have a project, job opportunity or collaboration?
+        Send me a message.
+    </p>
+
+    <form action="https://formspree.io/f/xoevkjrw" method="POST">
+
+        <label for="name">Name</label>
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            required
+        >
+
+        <label for="email">Email</label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+        >
+
+        <label for="message">Message</label>
+
+        <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Write your message..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+    <div class="links">
+
+        <a href="mailto:lucy.koome12@gmail.com">
+            Email Me
+        </a>
+
+        <a href="https://github.com/wanjiru540" target="_blank">
+            GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/wanjiru-lucy-46068a405"
+           target="_blank">
+            LinkedIn
+        </a>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Lucy Wanjiru. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
